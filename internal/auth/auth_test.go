@@ -14,7 +14,7 @@ func TestAuth(t *testing.T) {
 		Error  error
 	}{
 		"No token":         {"", "", ErrNoAuthHeaderIncluded},
-		"Malformed header": {"lkahsdahsd", "dsfjsdfh", errors.New("malformed authorization header")},
+		"Malformed header": {"lkahsdahsd", "", errors.New("malformed authorization header")},
 		"Everything is ok": {"ApiKey token", "token", nil},
 	}
 
